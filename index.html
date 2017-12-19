@@ -22,7 +22,6 @@
       <button type="submit">Get Planets</button>
     </form>
 
-    <!-- <h1>{{ctrl.planets}}</h1> -->
     <div ng-repeat="planet in ctrl.planets">
       <img ng-click="planet.show=ctrl.showPlanet(planet.show)" ng-src="{{planet.links[0].href}}">
       <hr>
