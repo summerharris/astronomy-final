@@ -43,6 +43,8 @@ app.controller("MainController",["$http",function ($http) {
     this.home = true;
     this.quiz = false;
     this.about= false;
+    this.correct=false;
+    this.wrong=false;
   }
 
   this.goQuiz = () => {
@@ -76,6 +78,8 @@ app.controller("MainController",["$http",function ($http) {
     this.home = false;
     this.quiz = false;
     this.about= true;
+    this.correct=false;
+    this.wrong=false;
   }
 
 
