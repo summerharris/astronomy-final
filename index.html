@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html ng-app="MovieApp">
+  <head>
+    <meta charset="utf-8">
+    <title>Angular</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+  </head>
+  <body ng-controller="MainController as ctrl">
+    <button ng-click="ctrl.getPlanet()">Get Planets</button>
+    <!-- <h1>{{ctrl.planets}}</h1> -->
+    <div ng-repeat="planet in ctrl.planets">
+      <img ng-click="planet.show=ctrl.showPlanet(planet.show)" ng-src="{{planet.links[0].href}}">
+      <hr>
+    </div>
+
+  </body>
+</html>
