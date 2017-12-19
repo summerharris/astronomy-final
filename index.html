@@ -7,15 +7,22 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="skeleton.css">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script type="text/javascript" src="app.js"></script>
   </head>
   <body ng-controller="MainController as ctrl">
     <div class="container">
 
+      <h1>Astronomy Final</h1>
+      <h2>Summer Harris</h2>
+      <nav>
+        <ul>
+          <li>Home</li>
+          <li>Quiz</li>
+          <li>About</li>
+        </ul>
+      </nav>
 
-    <header>
-
-    </header>
     <form ng-submit="ctrl.getPlanet()">
       Planet Name:
       <input type="text" ng-model="ctrl.searchterm" placeholder="Planet Name">
