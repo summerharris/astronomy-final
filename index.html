@@ -39,6 +39,12 @@
     <h1 ng-if="ctrl.correct">You Got It Right It Was: {{ctrl.lastanswer}}</h1>
     <h1 ng-if="ctrl.wrong">You Got It Wrong It Was: {{ctrl.lastanswer}}</h1>
 
+    <h2 ng-if="ctrl.about">Hi, I'm Summer Harris and this is my Astronomy Final.</h2>
+
+    <h2 ng-if="ctrl.about" >Click The Quiz Bar to Take a Quiz on Our Solar System!</h2>
+
+    <h2 ng-if="ctrl.about" >This Website Uses The NASA API to retrieve images!</h2>
+    <a href="https://api.nasa.gov/"><h2 ng-if="ctrl.about" >NASA API</h2></a>
 
 
     <div ng-repeat="planet in ctrl.planets">
