@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="normalize.css">
     <link rel="stylesheet" href="skeleton.css">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <script type="text/javascript" src="app.js"></script>
   </head>
   <body ng-controller="MainController as ctrl">
@@ -15,19 +14,32 @@
 
       <h1>Astronomy Final</h1>
       <h2>Summer Harris</h2>
-      <nav>
-        <ul>
-          <li>Home</li>
-          <li>Quiz</li>
-          <li>About</li>
+      <nav >
+        <ul class="navul">
+          <li ng-click="ctrl.goHome()">Home</li>
+          <li ng-click="ctrl.goQuiz()">Quiz</li>
+          <li ng-click="ctrl.goAbout()">About</li>
         </ul>
       </nav>
+      <br>
 
-    <form ng-submit="ctrl.getPlanet()">
-      Planet Name:
+
+
+    <form ng-if="ctrl.home"ng-submit="ctrl.getPlanet()">
       <input type="text" ng-model="ctrl.searchterm" placeholder="Planet Name">
       <button type="submit">Get Planets</button>
     </form>
+
+    <h1 ng-if="ctrl.quiz">What is the name of this Planet?</h1>
+    <form ng-if="ctrl.quiz"ng-submit="ctrl.answerQuiz()">
+      <input type="text" ng-model="ctrl.quizterm" placeholder="Planet Name">
+      <button type="submit">Submit Answer</button>
+    </form>
+
+    <h1 ng-if="ctrl.correct">You Got It Right It Was: {{ctrl.lastanswer}}</h1>
+    <h1 ng-if="ctrl.wrong">You Got It Wrong It Was: {{ctrl.lastanswer}}</h1>
+
+
 
     <div ng-repeat="planet in ctrl.planets">
       <img ng-click="planet.show=ctrl.showPlanet(planet.show)" ng-src="{{planet.links[0].href}}">
